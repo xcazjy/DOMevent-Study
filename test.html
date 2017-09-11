@@ -51,19 +51,28 @@ window.onload=function(){
           }
         }
         if(event.keyCode == 13 && enter == 0){
-          as[index].style.background="";
+          if(index != -1){
+            as[index].style.background="";
+          }
           menu.style.display='none';
-          title.innerHTML=as[index].innerHTML;
+          if(index != -1){
+            title.innerHTML=as[index].innerHTML;
+          }
           enter=1;
           index=-1;
         }else{
           enter=0;
           menu.style.display='block';
         }
-        as[index].style.background="#eee"
+        
+        if(index != -1){
+          as[index].style.background="#eee"
+        }
       } ;
       document.onkeydown = function(){
-        as[index].style.background="";
+        if(index != -1){
+          as[index].style.background="";
+        }
       }
     };
     
